@@ -1,4 +1,4 @@
-Proyecto planet-django-Yaco
+Proyecto planet-django
 
 - Crear repositio. https://github.com/anarey/myplanet
 - creamos y levantamos una maquina virtual con Vagrant y chef.
@@ -16,12 +16,6 @@ From github.com:anarey/myplanet
 
 git push -u origin master
 ----
-
-
-Hola Ana,
-
-aquí va la tarea para el viernes:
-
 ok a ### La idea es hacer un planet muy básico y sencillo en Django. Espero que
 como mínimo te sirva para aprender un poco este framework que me has
 contado que te interesaba.
