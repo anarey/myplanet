@@ -1,0 +1,85 @@
+Proyecto planet-django-Yaco
+
+- Crear repositio. https://github.com/anarey/myplanet
+- creamos y levantamos una maquina virtual con Vagrant y chef.
+- Commit inicial:
+- Creo el repo en github
+ django-admin.py startproject myplanet
+ python manage.py startapp planet
+git init
+git remote add origin git@github.com:anarey/myplanet.git
+git pull git@github.com:anarey/myplanet.git
+
+anarey@tuxiba:~/git/djandoapps/myplanet$ git pull git@github.com:anarey/myplanet.git
+From github.com:anarey/myplanet
+ * branch            HEAD       -> FETCH_HEAD
+
+git push -u origin master
+----
+
+
+Hola Ana,
+
+aquí va la tarea para el viernes:
+
+ok a ### La idea es hacer un planet muy básico y sencillo en Django. Espero que
+como mínimo te sirva para aprender un poco este framework que me has
+contado que te interesaba.
+
+ok b ## La idea es hacer un proyecto con una sola aplicación denominada
+planet.  
+
+
+ok c ## Esta aplicación tendrá un modelo denominado Blog con cuatro
+campos: 
+autor, 
+nombre (del blog), 
+feed que será una URL que apunte al feed RSS con el contenido del blog 
+campo booleano que indique si este blog está activo o no.
+
+
+
+ok ## d Una vez tengas el modelo deberás registrarlo en la aplicación 'admin'
+de Django para que se puedan crear, editar y modificar objetos del
+modelo Blog anteriormente descrito.
+
+
+ok ## e La aplicación tendrá una sola vista pública en la url /planet que hará
+lo siguiente:
+
+ok ## f 1. Recorrer todos los objetos del modelo Blog que estén activos.
+ 2. Para cada blog se debe descargar el feed de posts. Dejo a tu
+elección la libreria a utilizar para esto (las hay dentro de la
+librería estándar y también hay otras más específicas y/o fáciles de
+utilizar fuera de la librería estándar)
+ 3. Una vez que se descargue el feed debe parsear el XML y quedarse
+con el título del post, el enlace, la fecha de publicación y el cuerpo
+del contenido. Esto debe almacenarlo en una estructura de datos. Ver
+punto 4. Al igual que con el paso 2, puedes usar la librería de XML
+que quieras.
+ 4. Una vez almacenados todos los posts de todos los blogs en tu
+estructura de datos, debe ordenarlos por fecha de publicación.
+ 5. Esa información debe pasarsela a una plantilla en donde se
+mostrarán todos estos posts con enlaces a su blog original.
+
+Si te da tiempo y de forma opcional, puedes implementar paginación. En
+Django hay una utilidad específica que te ayudará.
+
+Puedes restringirlo solo a un cierto tipo de feed RSS, Atom, etc.. y version.
+
+En cuanto tengas el repositorio creado en Github pásanos la URL, please.
+
+
+
+## Profundizar entre diferencias entre 1.3 y 1.4
+## Crear una mv más actual para Vagrant
+## versiones de ubuntu para vagrant
+## Poner más bonito el formulario de admin 
+[ok] ## Controlar el theme de admin 
+## Ver correspondencia del sistema de traduccion en los templates [Para cambiar en las traducciones en vez de en el código]
+
+---------------
+## Control de horas
+Lunes:
+1 hora: git, vagrant y montaje de todo.
+2 horas: a-f
