@@ -7,7 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'myplanet.views.home', name='home'),
-    # url(r'^myplanet/', include('myplanet.foo.urls')),
+    url(r'^planet/', include('planet.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
