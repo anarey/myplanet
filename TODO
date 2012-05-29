@@ -15,6 +15,10 @@ From github.com:anarey/myplanet
  * branch            HEAD       -> FETCH_HEAD
 
 git push -u origin master
+
+---
+python manage.py runserver [::]:8000
+
 ----
 ok a ### La idea es hacer un planet muy básico y sencillo en Django. Espero que
 como mínimo te sirva para aprender un poco este framework que me has
@@ -42,15 +46,19 @@ ok ## e La aplicación tendrá una sola vista pública en la url /planet que har
 lo siguiente:
 
 ok ## f 1. Recorrer todos los objetos del modelo Blog que estén activos.
- 2. Para cada blog se debe descargar el feed de posts. Dejo a tu
+ok ## 2. Para cada blog se debe descargar el feed de posts. 
+Dejo a tu
 elección la libreria a utilizar para esto (las hay dentro de la
 librería estándar y también hay otras más específicas y/o fáciles de
 utilizar fuera de la librería estándar)
- 3. Una vez que se descargue el feed debe parsear el XML y quedarse
+
+ok ## 3. Una vez que se descargue el feed debe parsear el XML y quedarse
 con el título del post, el enlace, la fecha de publicación y el cuerpo
 del contenido. Esto debe almacenarlo en una estructura de datos. Ver
 punto 4. Al igual que con el paso 2, puedes usar la librería de XML
 que quieras.
+
+
  4. Una vez almacenados todos los posts de todos los blogs en tu
 estructura de datos, debe ordenarlos por fecha de publicación.
  5. Esa información debe pasarsela a una plantilla en donde se
@@ -77,3 +85,6 @@ En cuanto tengas el repositorio creado en Github pásanos la URL, please.
 Lunes:
 1 hora: git, vagrant y montaje de todo.
 2 horas: a-f
+Martes:
+12:00 - 14:30 // Investigar parseo de feed. Modulo feddparser
+
