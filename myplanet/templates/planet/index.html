@@ -15,7 +15,9 @@
 {% if post_list %}
     <ul>
         {% for post in post_list %}
-        <li>{{ post }}</li>
+        <li> <strong> {{ post.0 }}</strong> 
+            <p>{{ post.1 }}</p>
+        </li>
         {% endfor %}
     </ul>
 {% else %}

@@ -75,3 +75,13 @@ d.entries[0].summary
 Es una lista de diccionarios
 
 Because Atom entries can have more than one content element, d.entries[0].content is a list of dictionaries. Each dictionary contains metadata about a single content element. The two most important values in the dictionary are the content type, in d.entries[0].content[0].type, and the actual content value, in d.entries[0].content[0].value.
+
+-----
+p.published
+p.published_parsed  => time.struct_time(tm_year=2012, tm_mon=5, tm_mday=23, tm_hour=13, tm_min=9, tm_sec=30, tm_wday=2, tm_yday=144, tm_isdst=0)
+
+Convertir la hora a timestamp =>
+import calendar
+hora=calendar.timegm(p.published_parsed)
+
+

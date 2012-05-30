@@ -58,9 +58,14 @@ del contenido. Esto debe almacenarlo en una estructura de datos. Ver
 punto 4. Al igual que con el paso 2, puedes usar la librería de XML
 que quieras.
 
+- OK. Sacar de forma automática los datos. (La he liado inicialmente para recorrer los datos. Error, estaba intentando acceder a través del bucle a d['entries'][i] en vez de d['entries'])
+- Estudiar como ponerlo bonito.
 
  4. Una vez almacenados todos los posts de todos los blogs en tu
 estructura de datos, debe ordenarlos por fecha de publicación.
+ - OK - Obtener la fecha en timestamp
+- Ordenar por fecha
+
  5. Esa información debe pasarsela a una plantilla en donde se
 mostrarán todos estos posts con enlaces a su blog original.
 
@@ -87,4 +92,9 @@ Lunes:
 2 horas: a-f
 Martes:
 12:00 - 14:30 // Investigar parseo de feed. Modulo feddparser
+00:00 - 2:00 // Estructuras de datos, gestión de un post
 
+Miercoles:
+11:00
+
+http://packages.python.org/feedparser/microformats.html#advanced-microformats
