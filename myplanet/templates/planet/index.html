@@ -1,0 +1,23 @@
+{% if enable_list %}
+    <h1>Mi planeta infinito</h1>
+    <h2>Blog que intervienen:</h2>
+    <ul>
+        {% for blog in enable_list %}
+        <li>{{ blog.name }} por {{blog.author}} Enlace: {{blog.feed}} </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay blogs </p>
+{% endif %}
+
+    <h2>Post de los blog activos:Post de los blog activos:  </h2>
+
+{% if post_list %}
+    <ul>
+        {% for post in post_list %}
+        <li>{{ post }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p> No se pueden procesar los post </p>
+{% endif %}
