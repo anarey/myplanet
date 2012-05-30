@@ -69,18 +69,21 @@ estructura de datos, debe ordenarlos por fecha de publicación.
 OK - 5. Esa información debe pasarsela a una plantilla en donde se
 mostrarán todos estos posts con enlaces a su blog original.
 
-Si te da tiempo y de forma opcional, puedes implementar paginación. En
+[ok] Si te da tiempo y de forma opcional, puedes implementar paginación. En
 Django hay una utilidad específica que te ayudará.
+- Poner un poco más bonita. ¿con numeración? Si me da tiempo.
 
-Puedes restringirlo solo a un cierto tipo de feed RSS, Atom, etc.. y version.
+[TODO] Puedes restringirlo solo a un cierto tipo de feed RSS, Atom, etc.. y version.
 
-En cuanto tengas el repositorio creado en Github pásanos la URL, please.
+[ok] En cuanto tengas el repositorio creado en Github pásanos la URL, please.
 
 
 
 ## Profundizar entre diferencias entre 1.3 y 1.4
 ## Crear una mv más actual para Vagrant
-## versiones de ubuntu para vagrant
+[OK] ## versiones de ubuntu para vagrant. Oficiales solo hay de las LTS. Hay páginas con más imágenes, pero pueden no ser fiables. 
+## Preparar fichero vagrant con requisitos.
+## Subir a Heroku
 ## Poner más bonito el formulario de admin 
 [ok] ## Controlar el theme de admin 
 ## Ver correspondencia del sistema de traduccion en los templates [Para cambiar en las traducciones en vez de en el código]
@@ -95,7 +98,8 @@ Martes:
 00:00 - 2:00 // Estructuras de datos, gestión de un post
 
 Miercoles:
-11:00 - 14:30
-15:45 - 
+11:00 - 14:30  // Proceso de los post y ordenación
+15:45 - 18:30 // mostrado del contenido de los post y los campos necesarios. Paginación básica.
+
 
 http://packages.python.org/feedparser/microformats.html#advanced-microformats

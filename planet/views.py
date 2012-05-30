@@ -7,6 +7,7 @@ from django.shortcuts import render_to_response
 #from time import mktime
 #from datetime import datetime
 import calendar
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def index(request):
     blog_list = Blog.objects.all() ## Todos los blogs
@@ -28,8 +29,19 @@ def index(request):
             list_aux = [(dict_["date"], dict_) for dict_ in post_list]
             list_aux.sort(reverse=True)
             order_post = [dist_ for (key,dist_) in list_aux]
+
+            paginator = Paginator(order_post,6)
+            page = request.GET.get('page')
+            try:
+                posts = paginator.page(page)
+            except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+                posts = paginator.page(1)
+            except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+                posts = paginator.page(paginator.num_pages)
 #    return HttpResponse(enable_list)
-    return render_to_response('planet/index.html',{'enable_list' : enable_list,'post_list':order_post})
+    return render_to_response('planet/index.html',{'enable_list' : enable_list,'post_list':posts})
 
 
 ##### Cambiando el nombre de las listas para mostrar los disccionarios.

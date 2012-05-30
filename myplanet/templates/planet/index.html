@@ -15,7 +15,7 @@
 {% if post_list %}
     <ul>
         {% for post in post_list %}
-        <li> <strong><a href="{{ post.link }}"> {{ post.title }} </a></strong> 
+        <li> <strong><a href="{{ post.link }}"> {{ post.title }} </a></strong>
         <p>{{ post.date_format }}: {{ post.author }}</p>
             <p>{{ post.content|safe }} </p>
             
@@ -26,6 +26,32 @@
     <p> No se pueden procesar los post </p>
 {% endif %}
 
+
 {% for l in lista %}
     {{ l }}
 {% endfor %}
+
+
+
+
+{% for post in posts_list %}
+    {# Each "post" is a Blogt model object. #}
+    {{ blog.title|upper }}<br />
+    
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if post_list.has_previous %}
+            <a href="?page={{ blogs.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{post_list.number }} of {{ post_list.paginator.num_pages }}.
+        </span>
+
+        {% if post_list.has_next %}
+            <a href="?page={{ post_list.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
