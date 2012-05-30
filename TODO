@@ -64,9 +64,9 @@ que quieras.
  4. Una vez almacenados todos los posts de todos los blogs en tu
 estructura de datos, debe ordenarlos por fecha de publicación.
  - OK - Obtener la fecha en timestamp
-- Ordenar por fecha
+ - OK - Ordenar por fecha
 
- 5. Esa información debe pasarsela a una plantilla en donde se
+OK - 5. Esa información debe pasarsela a una plantilla en donde se
 mostrarán todos estos posts con enlaces a su blog original.
 
 Si te da tiempo y de forma opcional, puedes implementar paginación. En
@@ -95,6 +95,7 @@ Martes:
 00:00 - 2:00 // Estructuras de datos, gestión de un post
 
 Miercoles:
-11:00
+11:00 - 14:30
+15:45 - 
 
 http://packages.python.org/feedparser/microformats.html#advanced-microformats

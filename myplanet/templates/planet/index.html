@@ -15,11 +15,17 @@
 {% if post_list %}
     <ul>
         {% for post in post_list %}
-        <li> <strong> {{ post.0 }}</strong> 
-            <p>{{ post.1 }}</p>
+        <li> <strong><a href="{{ post.link }}"> {{ post.title }} </a></strong> 
+        <p>{{ post.date_format }}: {{ post.author }}</p>
+            <p>{{ post.content|safe }} </p>
+            
         </li>
         {% endfor %}
     </ul>
 {% else %}
     <p> No se pueden procesar los post </p>
 {% endif %}
+
+{% for l in lista %}
+    {{ l }}
+{% endfor %}
