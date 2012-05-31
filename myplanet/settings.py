@@ -110,6 +110,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     "/opt/git/myplanet/myplanet/templates",
+    "/opt/git/myplanet/myplanet/planet/templates",
     )
 
 INSTALLED_APPS = (

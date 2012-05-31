@@ -41,7 +41,7 @@ def index(request):
             # If page is out of range (e.g. 9999), deliver last page of results.
                 posts = paginator.page(paginator.num_pages)
 #    return HttpResponse(enable_list)
-    return render_to_response('planet/index.html',{'enable_list' : enable_list,'post_list':posts})
+    return render_to_response('index.html',{'enable_list' : enable_list,'post_list':posts})
 
 
 ##### Cambiando el nombre de las listas para mostrar los disccionarios.
