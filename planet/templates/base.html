@@ -1,10 +1,23 @@
+{% load staticfiles %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"}
 <html lang="es">
     <head>
         <title>{% block title%}{% endblock %}</title>
     </head>
     <body>
-        <h1>Mi planeta</h1>
+        <h1>Un planeta</h1>
+        {% block head %}
+            <style type="text/css">
+                p {margin-left:10px;}
+                div{
+                    width : 900px;
+                    padding:10px;
+                }
+                body{width:1000px}
+            </style>
+       
+       
+        {% endblock %}
         {% block content %}{% endblock %}
         {% block footer %}
         <p>¡Gracias por su visita!</p>
