@@ -1,4 +1,9 @@
 # Django settings for myplanet project.
+import os
+import django
+
+DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -109,8 +114,10 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "/opt/git/myplanet/myplanet/templates",
-    "/opt/git/myplanet/myplanet/planet/templates",
+    os.path.join(SITE_ROOT,'templates'),
+    os.path.join(SITE_ROOT,'planet/templates'),
+#    "/opt/git/myplanet/myplanet/templates",
+#   "/opt/git/myplanet/myplanet/planet/templates",
     )
 
 INSTALLED_APPS = (
