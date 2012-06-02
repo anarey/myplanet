@@ -14,7 +14,8 @@ def index(request):
     ## Obtemos solo los objetos que cumplen dicha condicion
     ## Que estan activos
     #blog_list = Blog.objects.filter(enable=True) 
-    enable_list = Blog.objects.filter(enable = True)
+    query_blog = Blog.objects.all()
+    enable_list = query_blog.filter(enable = True)
     #enable_list = []
     post_list = []
     for b in enable_list:
