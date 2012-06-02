@@ -30,10 +30,6 @@
 {% endif %}
 
 
-{% for l in lista %}
-    {{ l }}
-{% endfor %}
-
 {% for post in posts_list %}
     {# Each "post" is a Blogt model object. #}
     {{ blog.title|upper }}<br />
