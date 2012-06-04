@@ -1,7 +1,9 @@
+""" Definimos los modelos de la app """
 from django.db import models
 
-# Create your models here.
 class Blog(models.Model):
+    """ Objeto modelo """
+
     author = models.CharField(max_length = 100)
     name = models.CharField(max_length = 100)
     feed = models.URLField()
