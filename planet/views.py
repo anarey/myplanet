@@ -37,5 +37,5 @@ def index(request):
     except EmptyPage:
      # If page is out of range (e.g. 9999), deliver last page of results.
         posts = paginator.page(paginator.num_pages)
-    return render_to_response('index.html',{'enable_list' : enable_list,'post_list':posts})
+    return render_to_response('index.html',{'enable_list' : enable_list,'post_list':posts, 'page_number':range(1,paginator.num_pages+1)})
 

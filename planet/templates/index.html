@@ -45,7 +45,12 @@
         <span class="current">
             Page {{post_list.number }} of {{ post_list.paginator.num_pages }}.
         </span>
-
+        (
+        {% for i in page_number %}
+            <a href="?page={{ i }}">{{ i }}</a>
+        {% endfor %}
+        
+        )
         {% if post_list.has_next %}
             <a href="?page={{ post_list.next_page_number }}">next</a>
         {% endif %}
