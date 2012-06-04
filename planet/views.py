@@ -1,11 +1,7 @@
 # Create your views here.
 import feedparser
 from planet.models import Blog
-#from django.http import HttpResponse
 from django.shortcuts import render_to_response
-
-#from time import mktime
-#from datetime import datetime
 import calendar
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
