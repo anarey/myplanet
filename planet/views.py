@@ -1,9 +1,10 @@
 """ Vistas definidas para app planet """
-import feedparser
-from planet.models import Blog
-from django.shortcuts import render_to_response
 import calendar
+import feedparser
+
+from django.shortcuts import render_to_response
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from planet.models import Blog
 
 def index(request):
     """ vista que muestra los post de todos los blogs ordenados por fecha
