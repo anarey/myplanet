@@ -7,29 +7,18 @@ Mi menu:
 
 <div id="content">
     <h1>Mi planeta infinito</h1>
-    {% if enable_list %}
-     <h2>Blogs que intervienen:</h2>
-     <ul>
-            {% for blog in enable_list %}
-            <li><a href="{{blog.link}}">{{ blog.name }}</a> por {{blog.author}} Enlace: {{blog.feed}} </li>
-            {% endfor %}
-     </ul>
-    {% else %}
-        <p>No hay blogs a mostrar </p>
-    {% endif %}
-    <p>----- </p>
      <h2>Post de los blog activos: </h2>
 
     {% if post_list %}
-        <ul>
+        <div class="bloglist">
             {% for post in post_list %}
-            <li> <strong><a href="{{ post.link }}"> {{ post.title }} </a></strong>
-            <p>Fecha: {{ post.date_format }} |  Autor: {{ post.author }}</p>
-                 <div>{{ post.content|safe }} </div>
+            <div class="blog"> <div class="blog-title"><a href="{{ post.link }}"> {{ post.title }} </a></div>
+                <div class="blog-sub"> <span class="blog-date">Fecha: {{ post.date_format }}</span> | <span class="blog-author"> Autor: {{ post.author }}</span></div>
+                 <div class="blog-content">{{ post.content|safe }} </div>
+            </div>
              <p> --- ~~~~ --- </p>
-            </li>
             {% endfor %}
-        </ul>
+        </div>
     {% else %}
          <p> No se pueden procesar los posts </p>
     {% endif %}
@@ -68,7 +57,7 @@ Mi menu:
      <h2>Blogs que intervienen:</h2>
      <ul>
             {% for blog in enable_list %}
-            <li><a href="{{blog.link}}">{{ blog.name }}</a> por {{blog.author}} Enlace: {{blog.feed}} </li>
+            <li><a href="{{blog.link}}">{{ blog.name }}</a> por {{blog.author}} </li>
             {% endfor %}
      </ul>      
     {% else %}

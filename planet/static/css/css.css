@@ -1,0 +1,47 @@
+p {margin-left:5px;}
+
+body{width:1200px;}
+
+#head
+{
+    border: 5px;
+     border-style:dashed;
+    width: 1180px;
+
+   /* background-color: #BAE568; */
+}
+#footer
+{
+    width: 1180px;
+    clear: left;
+}
+#content{
+    float: left;
+    width: 950px;
+ /*   background-color: #BAE568;*/
+}
+
+#menu
+{
+    float: rigth;
+/*    background-color: #BAE568; */
+
+}
+#column
+{
+    float: left;
+    width: 250px;
+/*    background-color: #BAE568; */
+}
+.blog{
+    border:1px;
+    border-style: dotted;
+    border-color: black;
+}
+
+span.author{
+text-align:right;
+}
+.blog-sub{
+text-align:right;
+}
