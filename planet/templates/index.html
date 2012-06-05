@@ -54,10 +54,10 @@ Mi menu:
 <div id="column">
 
    {% if enable_list %}
-     <h2>Blogs que intervienen:</h2>
+   <h2><a href="/planet/bloglist/">Blogs que intervienen:</a></h2>
      <ul>
             {% for blog in enable_list %}
-            <li><a href="{{blog.link}}">{{ blog.name }}</a> por {{blog.author}} </li>
+            <li><a href="{{ blog.link }}">{{ blog.name }}</a> por {{blog.author}} </li>
             {% endfor %}
      </ul>      
     {% else %}

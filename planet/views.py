@@ -38,3 +38,10 @@ def index(request):
         posts = paginator.page(paginator.num_pages)
     return render_to_response('index.html', {'enable_list' : enable_list,
         'post_list': posts, 'page_number': range(1, paginator.num_pages+1)})
+
+def blog_list(request):
+    """ Vista que muestra el listado detallado de los distintos blogs sindicados."""
+
+    query_blog = Blog.objects.all()
+    enable_blog = query_blog.filter(enable = True)
+    return render_to_response('bloglist.html', {'enable_blog': enable_blog})    

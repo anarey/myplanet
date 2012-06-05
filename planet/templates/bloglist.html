@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} Vista principal del Planet {% endblock %}
+{% block content %}
+<div id="menu">
+Mi menu:
+</div>
+
+<div id="content">
+    <h1>Mi planeta infinito</h1>
+
+    <div id="column">
+    </div>
+   {% if enable_blog %}
+         <h2>Blogs que intervienen en este planet:</h2>
+     <ul>
+            {% for blog in enable_blog %}
+            <li><a href="">{{ blog.name }}</a> por {{ blog.author }} </li>
+            {% endfor %}
+     </ul>      
+    {% else %}
+        <p>No hay blogs a mostrar </p>
+    {% endif %}
+
+</div>
+
+
+{% endblock %}
+

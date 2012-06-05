@@ -4,5 +4,6 @@ from django.conf.urls import patterns, url
 
 urlpatterns = patterns('planet.views',
         url(r'^$','index'),
-#        url(r'^(?P<blog_id>\d+)/$', 'detail'),
+        url(r'^bloglist/$','blog_list'),
+        #        url(r'^(?P<blog_id>\d+)/$', 'detail'),
 )
