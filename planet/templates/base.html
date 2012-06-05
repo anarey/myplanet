@@ -2,24 +2,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"}
 <html lang="es">
     <head>
+        <link href="{{ STATIC_URL }}/static/css/css.css" rel="stylesheet" type="text/css">
         <title>{% block title%}{% endblock %}</title>
     </head>
     <body>
         {% block head %}
-            <style type="text/css">
-                p {margin-left:10px;}
-                div{
-                    width : 900px;
-                    padding:10px;
-                }
-                body{width:1000px}
-            </style>
+        <div id="head">
             <img src="{{ STATIC_URL }}/static/img/head.jpg" />       
+        </div>    
         {% endblock %}
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock %}
         {% block footer %}
-        <p>¡Gracias por su visita!</p>
-        {% endblock %}
+            <div id="footer">
+                <p>¡Gracias por su visita!</p>
+            </div>
+            {% endblock %}
     </body>
 
 </html>
