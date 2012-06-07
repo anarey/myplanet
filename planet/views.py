@@ -2,6 +2,7 @@
 import calendar
 import feedparser
 
+from django.db.models import Q
 from django.shortcuts import render_to_response
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from planet.models import Blog
@@ -45,3 +46,19 @@ def blog_list(request):
     query_blog = Blog.objects.all()
     enable_blog = query_blog.filter(enable = True)
     return render_to_response('bloglist.html', {'enable_blog': enable_blog})    
+
+def blog_search(request):
+    """ vista que permite realizar una busqueda entre los feed que se muestran en el planet
+    por autor o titulo del blogs"""
+    query = request.GET.get('word','')
+    if query:
+        qs_search = (
+                Q(name__icontains = query)| 
+                Q(author__icontains = query)
+                )
+        result_search = Blog.objects.filter(qs_search)
+    else:
+        result_search = []
+    return render_to_response('blogsearch.html', {
+        'result_search':result_search,
+        'query' : query})

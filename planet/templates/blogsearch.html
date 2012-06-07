@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %} Buscar entre los feed que se muestran {% endblock %}
+{% block content %}
+<div id="menu">
+    Mi menu:
+</div>
+
+<div id="content">
+    <h1> Búsqueda entre los feed </h1>
+    <div id="column">
+        hola
+    </div>
+    <p>Vamos a buscar</p>
+    <form action="." method="GET">
+        <label for="word">Search: </label>
+        <input type="text" name="word" value="{{ query|escape }}">
+        <input type="submit" value="search">
+    </form>
+
+    {% if query %}
+        <h2>Resultado de la búsqueda "{{ query|escape }}" </h2>
+        {% if result_search %}
+            <ul>
+                {% for blog in result_search %}
+                    <li>{{ blog.name|escape }}</li>
+                {% endfor%}    
+            </ul>
+        {% else %}
+            <p>No se ha encontrado ningún post</p>
+        {% endif %}
+    {% endif%}
+
+</div>
+{% endblock %}
