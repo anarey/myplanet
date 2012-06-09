@@ -7,15 +7,14 @@
 
 <div id="content">
     <h1> Búsqueda entre los feed </h1>
-    <div id="column">
-        hola
-    </div>
-    <p>Vamos a buscar</p>
     <form action="." method="GET">
-        <label for="word">Search: </label>
+        <label for="word">Introduce el nombre o autor: </label>
         <input type="text" name="word" value="{{ query|escape }}">
         <input type="submit" value="search">
     </form>
+    {% if error %}
+        <p style="color:red;">Por favor, debe incroducir el término a buscar</p>
+    {% endif%}
 
     {% if query %}
         <h2>Resultado de la búsqueda "{{ query|escape }}" </h2>
