@@ -77,7 +77,13 @@ def blog_new(request):
             blog_form = blog_preform.cleaned_data
             ## TODO Codigo alta blogs en la bd.
             ## Como todo fue bien, redireccion a otra pagina. por seguridad
-            return HttpResponseRedirect('/planet/bloglist/')
+            newlink = Blog()
+            newlink.author = blog_form['author']
+            newlink.name = blog_form['name']
+            newlink.feed = blog_form['feed']
+            newlink.enable = False
+            newlink.save()
+        return HttpResponseRedirect('/planet/bloglist/')
     else:
         ## Si no hay info en request.POST, 1 vez que entra: 
         ## formulario en blanco
