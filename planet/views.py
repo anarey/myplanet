@@ -3,8 +3,6 @@
 import calendar
 import feedparser
 
-from django.core.context_processors import csrf
-from django import forms
 from django.template import RequestContext
 from django.db.models import Q
 from django.shortcuts import render_to_response
@@ -48,7 +46,8 @@ def index(request):
         'post_list': posts, 'page_number': range(1, paginator.num_pages+1)})
 
 def blog_list(request):
-    """ Vista que muestra el listado detallado de los distintos blogs sindicados."""
+    """ Vista que muestra el listado detallado de los distintos 
+    blogs sindicados."""
 
     query_blog = Blog.objects.all()
     enable_blog = query_blog.filter(enable = True)
@@ -68,14 +67,13 @@ def blog_search(request):
             'result_search':result_search,
             'query' : query})
     else:
-        return render_to_response('blogsearch.html',{'error':True})
+        return render_to_response('blogsearch.html', {'error':True})
 
 def blog_new(request):
     if request.method == 'POST':
         blog_preform = BlogForm(request.POST)
         if blog_preform.is_valid():
             blog_form = blog_preform.cleaned_data
-            ## TODO Codigo alta blogs en la bd.
             ## Como todo fue bien, redireccion a otra pagina. por seguridad
             newlink = Blog()
             newlink.author = blog_form['author']
@@ -83,10 +81,11 @@ def blog_new(request):
             newlink.feed = blog_form['feed']
             newlink.enable = False
             newlink.save()
-        return HttpResponseRedirect('/planet/bloglist/')
+            return HttpResponseRedirect('/planet/bloglist/')
     else:
         ## Si no hay info en request.POST, 1 vez que entra: 
         ## formulario en blanco
-        form_blog = BlogForm()
+        blog_preform = BlogForm()
     
-    return render_to_response('blognew.html',{'blog_form': form_blog},context_instance=RequestContext(request))
+    return render_to_response('blognew.html',{'blog_form': blog_preform}, 
+            context_instance=RequestContext(request))
