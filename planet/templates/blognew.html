@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %} Dar de alta un nuevo feed {% endblock %}
+{% block content %}
+<div id="menu">
+    Mi menu:
+</div>
+
+<div id="content">
+    <h1> Nuevo blogs  </h1>
+    <div id="column">
+        hola
+    </div>
+    <p>Vamos a buscar</p>
+    {% if blog_Form.errors %}
+        <p style="Color: red;"> A ver si: {{ blog_form.errors|pluralize }}</p>
+    {% endif%}
+    <form action="." method="post">{% csrf_token %} 
+        <ul>
+           {{ blog_form.as_ul }}
+       </ul>
+       <input type="submit" value="Dar de alta">
+        
+   </form>
+</div>
+{% endblock %}

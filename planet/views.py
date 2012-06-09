@@ -1,11 +1,18 @@
+# -*- coding: utf-8 -*-
 """ Vistas definidas para app planet """
 import calendar
 import feedparser
 
+from django.core.context_processors import csrf
+from django import forms
+from django.template import RequestContext
 from django.db.models import Q
 from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from planet.models import Blog
+from planet.forms import BlogForm
+
 
 def index(request):
     """ vista que muestra los post de todos los blogs ordenados por fecha
@@ -62,3 +69,18 @@ def blog_search(request):
             'query' : query})
     else:
         return render_to_response('blogsearch.html',{'error':True})
+
+def blog_new(request):
+    if request.method == 'POST':
+        blog_preform = BlogForm(request.POST)
+        if blog_preform.is_valid():
+            blog_form = blog_preform.cleaned_data
+            ## TODO Codigo alta blogs en la bd.
+            ## Como todo fue bien, redireccion a otra pagina. por seguridad
+            return HttpResponseRedirect('/planet/bloglist/')
+    else:
+        ## Si no hay info en request.POST, 1 vez que entra: 
+        ## formulario en blanco
+        form_blog = BlogForm()
+    
+    return render_to_response('blognew.html',{'blog_form': form_blog},context_instance=RequestContext(request))
