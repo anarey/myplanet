@@ -17,74 +17,79 @@ $ python manage.py runserver [::]:8000
 
 ----
 Tareas:
-ok a ### La idea es hacer un planet muy básico y sencillo en Django. Espero que
-como mínimo te sirva para aprender un poco este framework que me has
-contado que te interesaba.
+[OK] ## Plantear un planet muy básico y sencillo en Django.
 
-ok b ## La idea es hacer un proyecto con una sola aplicación denominada
-planet.  
+[OK] ## Crear una aplicacion denominada planet.  
 
-ok c ## Esta aplicación tendrá un modelo denominado Blog con cuatro
-campos: 
+[OK] ## Crear modelo de datos nominado Blog con cuatro campos: 
 autor, 
 nombre (del blog), 
 feed que será una URL que apunte al feed RSS con el contenido del blog 
 campo booleano que indique si este blog está activo o no.
 
-ok ## d Una vez tengas el modelo deberás registrarlo en la aplicación 'admin'
-de Django para que se puedan crear, editar y modificar objetos del
-modelo Blog anteriormente descrito.
+[OK] ## Registrar la aplicación en la zona de administración de forma que se pueda crear, editar y modificar los objetos.
 
-ok ## e La aplicación tendrá una sola vista pública en la url /planet que hará
-lo siguiente:
+[OK] ## Crear vista pública en la url /planet que hará lo siguiente:
 
-ok ## f 1. Recorrer todos los objetos del modelo Blog que estén activos.
-ok ## 2. Para cada blog se debe descargar el feed de posts. 
+[OK] ## 1. Recorrer todos los objetos del modelo Blog que estén activos.
+[OK] ## 2. Para cada blog se debe descargar el feed de posts. 
 Dejo a tu elección la libreria a utilizar para esto (las hay dentro de la
 librería estándar y también hay otras más específicas y/o fáciles de
 utilizar fuera de la librería estándar)
 
-ok ## 3. Una vez que se descargue el feed debe parsear el XML y quedarse
+[OK] ## 3. Una vez que se descargue el feed debe parsear el XML y quedarse
 con el título del post, el enlace, la fecha de publicación y el cuerpo
-del contenido. Esto debe almacenarlo en una estructura de datos. Ver
-punto 4. Al igual que con el paso 2, puedes usar la librería de XML
-que quieras.
+del contenido. Almacenarlo en una estructura de datos.
 
-ok ## Sacar de forma automática los datos. (La he liado inicialmente para recorrer los datos. Error, estaba intentando acceder a través del bucle a d['entries'][i] en vez de d['entries'])
-- Estudiar como ponerlo bonito.
+[OK] ## Sacar de forma automática los datos. (La he liado inicialmente para recorrer los datos. Error, estaba intentando acceder a través del bucle a d['entries'][i] en vez de d['entries'])
+[OK] ## Ponerlo medianemente bonito.
 
- 4. Una vez almacenados todos los posts de todos los blogs en tu
+[OK] ## Una vez almacenados todos los posts de todos los blogs en tu
 estructura de datos, debe ordenarlos por fecha de publicación.
  - OK - Obtener la fecha en timestamp
  - OK - Ordenar por fecha
 
-OK - 5. Esa información debe pasarsela a una plantilla en donde se
-mostrarán todos estos posts con enlaces a su blog original.
+[OK] ## Crear una plantilla en donde se mostrarán todos estos posts con enlaces a su blog original.
 
-ok Si te da tiempo y de forma opcional, puedes implementar paginación. En
-Django hay una utilidad específica que te ayudará.
-[TODO] Poner un poco más bonita. ¿con numeración? Si me da tiempo.
+[OK] ## Implementar paginación. 
+[OK] ## Poner un poco más bonita. ¿con numeración?
 
 [TODO] Puedes restringirlo solo a un cierto tipo de feed RSS, Atom, etc.. y version.
 
-[ok] En cuanto tengas el repositorio creado en Github pásanos la URL, please.
+## [OK] Solucionar rutas absolutas de los ficheros de configuración. 
 
----------------
-## Control de horas
-Lunes:
-1 hora: git, vagrant y montaje de todo.
-2 horas: a-f
-Martes:
-12:00 - 14:30 // Investigar parseo de feed. Modulo feddparser
-00:00 - 2:00 // Estructuras de datos, gestión de un post
+## [OK] En la vista, blog_list podria haberse filtrado con los activos
+directamente, añadiendo una llamada al método filter() del queryset.
+https://docs.djangoproject.com/en/dev/topics/db/queries/
 
-Miercoles:
-11:00 - 14:30  // Proceso de los post y ordenación
-15:45 - 18:30 // mostrado del contenido de los post y los campos necesarios. Paginación básica.
+[OK] ### Paginación con numeros.  // podría hacerse más elegante.
+### TODO Probar con opciones de los bucles for de las plantillas para hacer la iteración.
+- está hecha, mandado el numero total de paginas convertida en una lista. Por que no sé como hacer un (for i=1 to 10) en los templates.
 
-Jueves:
-12:00 - 14:30 // Herencia de template y estudio del uso de css
-16:30 - 20:00 // "
-22:00 -       // Revivar y corregir errores.
+[OK] ### Hacer un formulario para dar de alta rss y después ser aceptados a través de la zona de administración. (mandar un mail diario indicando si hay tareas de administración.)
 
+[OK] Comprobaciones de estilo:
+* Python: http://www.python.org/dev/peps/pep-0008/
+* Django: https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/
+
+TODO ### Numero total de post que muestra un RSS.  ¿Forma de obtener todos?
+
+TODO ### Incluir el formulario de búsqueda en todas las páginas a través de base.html
+
+[OK] Probar como mostrar un formulario a partir de un modelo de datos:
+https://docs.djangoproject.com/en/dev/topics/forms/modelforms/
+http://www.maestrosdelweb.com/editorial/curso-django-los-formularios/
+Hecho, pero eliminado del proyecto. 
+
+TODO ## Arreglar css/ Colummnas mismo tamaño.
+
+http://www.librosweb.es/css_avanzado/capitulo1/elementos_de_la_misma_altura.html
 http://packages.python.org/feedparser/microformats.html#advanced-microformats
+
+TODO ### Restringirlo solo a un cierto tipo de feed RSS, Atom, etc.. y version. ¿?
+
+
+TODO ### Leer entradas de googleplus. librería en python que lee de googleplus.
+TODO ### convertir de googlepus a RSS.
+TODO ### rss de github
+
